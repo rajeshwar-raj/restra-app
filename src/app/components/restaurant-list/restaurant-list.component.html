@@ -1,0 +1,13 @@
+<div class="restList">
+<div  *ngFor="let rest of restaurantList">
+    
+    <div class="restCard" (click)="getRestaurant(rest.restaurant.R.res_id)">
+            <img class="restThumb" src={{rest.restaurant.thumb}} alt={{rest.restaurant.name}} >
+            <div style="display: grid;">
+                <span class="restName">{{rest.restaurant.name}}</span>
+                <span class="restDetails">Locality:{{rest.restaurant.location.locality}}</span>
+                <span class="restDetails">Average Cost : {{rest.restaurant.average_cost_for_two}} for 2 people</span>
+            </div>
+</div>
+</div>
+</div>

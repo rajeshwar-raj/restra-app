@@ -1,0 +1,35 @@
+.restCard{
+    border: 1px solid;
+    /* border-color: brown; */
+    height: 22em;
+    width: 13em;
+    margin: 10px;
+    box-shadow: 10px 10px 5px #8080807a;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.restThumb{
+    border: 1px solid #6f6f71;
+    width: 12em;
+    border-radius: 3px;
+    position: relative;
+    margin: 7px;
+}
+
+.restName{
+    font-family: cursive;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #e03131;
+}
+.restDetails{
+    padding: 0px 10px;
+    font-size: 13px;
+    color: #6f6d6d;
+}
+.restList{
+    display: flex;
+    flex-wrap: wrap;
+}

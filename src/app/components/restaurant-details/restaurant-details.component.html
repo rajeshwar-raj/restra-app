@@ -1,0 +1,27 @@
+<div class="flex-container" >
+        <img class="featuredImage" src={{rd.featured_image}} alt={{rd.name}} >
+    <article>
+            
+            <span class="restName">{{rd.name}}</span><br>
+            Ph No. {{rd.phone_numbers}}<br>
+            Location: {{rd.location.address}}<br>
+            Cuisines: {{rd.cuisines}}<br>
+            Timing: {{rd.timings}}<br>
+            Average Cost for Two: Rs.{{rd.average_cost_for_two}}
+    </article>
+</div>
+<h3>User Reviews</h3>
+<div>
+    <div class="revSection" *ngFor="let review of rd.all_reviews.reviews">
+        <div class="flex-container ">
+        <div>
+        <img  class="userImg" src={{review.review.user.profile_image}}>
+        </div>
+        <div class="revDetails">
+            <span class="userName">{{review.review.user.name}}</span>  rates it as <span class="usrRatingText">{{review.review.rating_text}}</span>
+            <p class="userReviewText">{{review.review.review_text}}</p>
+        </div>
+    </div>
+   
+    </div>
+</div>

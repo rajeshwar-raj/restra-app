@@ -1,0 +1,14 @@
+<div class="top">
+  <div style="text-align: center">
+    <label class="appName">My Restra Finder</label>
+  </div>
+  <div class="menu">
+  <select class="selectBox">
+  <option *ngFor="let loc of locations">{{loc}}</option>
+  </select>
+  <label *ngIf="currLocation" class="locationBox">{{currLocation}}</label>
+  <button class="autoSelect" (click)="getLocation()">Let Us Detect</button>
+  
+  
+</div>
+</div>
