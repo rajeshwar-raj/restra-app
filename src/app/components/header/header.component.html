@@ -3,10 +3,12 @@
     <label class="appName">My Restra Finder</label>
   </div>
   <div class="menu">
-  <select class="selectBox" [(ngModel)]="selectedLocation" (ngModelChange)="selectLocation($event)">
-      <option [value]=null>Select</option>
-    <option *ngFor="let loc of locations" >{{loc}}</option>
+      <label class="tex">Location: </label>
+  <select class="selectBox" name="locDropDown" [(ngModel)]="selectedLocation" (ngModelChange)="selectLocation($event)">
+    <!-- <option [ngValue]="null">Select Manually</option> -->
+    <option *ngFor="let loc of locations" [ngValue]="loc">{{loc}}</option>
   </select>
+  <label *ngIf="!currLocation" class="tex"> OR </label>
   <label *ngIf="currLocation" class="locationBox">{{currLocation}}</label>
   <button class="autoSelect" (click)="getLocation()">Let Us Detect</button>
   

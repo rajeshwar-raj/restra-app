@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { LocationService } from '../location.service';
 
 
 @Component({
@@ -9,12 +10,13 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'ang-app';
-  locations:any;
-  lat;
-  lng;
-  constructor( private router: Router){}
+  //isLoading:boolean=true;
+
+  constructor( private router: Router, private locSer: LocationService){}
   ngOnInit(){
     this.router.navigate(['']);
   }
-  
+  isLoading(){
+    return this.locSer.getIsLoading();
+  }
 }

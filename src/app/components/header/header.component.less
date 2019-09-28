@@ -1,16 +1,16 @@
 .top{
     background-color: #480048;
     height: 100%;
-    width: 100%;
+    //width: 100%;
     padding: 1%;
 }
 .selectBox{
-    height: 3em;
-    width: 14em;
+   // height: 3em;
+   // width: 14em;
     border-radius: 3px;
-    padding: 8px;
-    font-family: cursive;
-    font-weight: bold;
+    padding: 2%;
+   // font-family: cursive;
+  //  font-weight: bold;
     color: #9c9c9e;
     cursor: pointer;
 }
@@ -19,36 +19,59 @@
     background-color: #9C27B0;
     color: white;
     border-radius: 3px;
-    height: 3em;
+    //height: 3em;
     width: max-content;
     border: none;
-    padding: 7px;
-    font-family: cursive;
-    font-weight: bold;
+    padding: 2%;
+    //font-family: cursive;
+   // font-weight: bold;
     cursor: pointer;
 }
 .locationBox{
-    border: 2px solid snow;
-    /* padding: 7px; */
     border-radius: 3px;
     background-color: white;
     color: #9c9c9e;
-    font-family: cursive;
+    //font-family: cursive;
     /* font-weight: bold; */
-    height: 3em;
-    padding: 6px 20px;
+    //height: 3em;
+    padding: 2%;
     margin-left: 2em;
     
 }
 .appName{
     margin: 6%;
     font-family: cursive;
-    font-size: 4em;
+    font-size: 3em;
     font-weight: bold;
     color: white;
 }
 .menu{
     text-align: center;
-    margin: 2em;
+    margin: 1%;
+    padding: 2%;
+    //display: flex;
+
+}
+.tex{
+    color: white;
+    padding: 2%;
+}
+
+@media screen and (max-width: 600px){
+    .menu{
+        display: flex;
+    }
+    .appName{
+       font-size: 2em;
+    }
+    .locationBox{
+        padding: 0px;
+    }
+    .autoSelect{
+        padding: 0px;
+    }
+    .selectBox{
+        padding: 0px;
+    }
 
 }

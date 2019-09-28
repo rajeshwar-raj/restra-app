@@ -8,6 +8,7 @@ const url = 'https://developers.zomato.com/api/v2.1';
 
 
 export class LocationService {
+  isLoading: boolean=false;
   
  constructor(private httpClient:HttpClient) { }
   httpOptions={ headers: new HttpHeaders({
@@ -32,5 +33,11 @@ getLocation(lat:any,lon:any){
   getRestraOnEntity(entity_id: any, entity_type: any) {
     let uri = `${url}/location_details?entity_id=${entity_id}&entity_type=${entity_type}`;
     return this.httpClient.get(uri,this.httpOptions);
+  }
+  getIsLoading(){
+    return this.isLoading;
+  }
+  setIsLoading(load){
+    this.isLoading = load;
   }
 }

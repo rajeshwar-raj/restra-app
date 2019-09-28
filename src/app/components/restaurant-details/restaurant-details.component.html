@@ -5,11 +5,11 @@
 
             <div class="restName">{{rd.name}}</div><br>
             <div>
-                Contact No. {{rd.phone_numbers}}<br>
-                Location: {{rd.location.address}}<br>
-                Cuisines: {{rd.cuisines}}<br>
-                Timing: {{rd.timings}}<br>
-                Average Cost for Two: Rs.{{rd.average_cost_for_two}}
+                <span class="restDet">Contact No. </span>{{rd.phone_numbers}}<br>
+                <span class="restDet">Location: </span>{{rd.location.address}}<br>
+                <span class="restDet">Cuisines: </span>{{rd.cuisines}}<br>
+                <span class="restDet">Timing: </span>{{rd.timings}}<br>
+                <span class="restDet">Average Cost for Two: </span>Rs.{{rd.average_cost_for_two}}
             </div>
         </article>
     </div>
@@ -23,7 +23,13 @@
     </div>
     <div class="headerText">User Reviews</div>
     <div>
-        <div class="revSection" *ngFor="let review of rd.all_reviews.reviews">
+        <div>
+            <app-user-review *ngFor="let review of rd.all_reviews.reviews"
+            [review]=review.review>
+
+            </app-user-review>
+        </div>
+        <!-- <div class="revSection" *ngFor="let review of rd.all_reviews.reviews">
             <div class="flex-container ">
                 <div>
                     <img class="userImg" src={{review.review.user.profile_image}} alt="{{review.review.user.name}}">
@@ -35,6 +41,6 @@
                 </div>
             </div>
 
-        </div>
+        </div> -->
     </div>
 </div>

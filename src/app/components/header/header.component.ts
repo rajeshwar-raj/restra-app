@@ -15,6 +15,7 @@ export class HeaderComponent implements OnInit {
   lng: number;
   locations: any;
   currLocation;
+  selectedLocation;
   locationDetails: LocationDetails = {entity_id:'',entity_type:'',city_name:''};
   
 
@@ -26,6 +27,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.locations = this.locState.getDefaultLocations();
+    this.selectedLocation = this.locations[0];
   }
 
   getLocation() {
@@ -34,12 +36,14 @@ export class HeaderComponent implements OnInit {
           if (position) {
             this.lat = position.coords.latitude;
             this.lng = position.coords.longitude;
+            this.locService.setIsLoading(true);
             this.locService.getLocation(this.lat,this.lng).subscribe(res =>{
               let data:any=res;
               this.currLocation = `${data.location.title}, ${data.location.city_name}`;
               this.locState.setLocation(data.location);
               this.restraState.setRestaurants(data.nearby_restaurants);
-              this.router.navigateByUrl('/restaurantList');    
+              this.router.navigateByUrl('/restaurantList');   
+              this.locService.setIsLoading(false); 
                   });
 
           }
@@ -51,6 +55,7 @@ export class HeaderComponent implements OnInit {
   }
   selectLocation($event){
     if($event != undefined){
+      this.locService.setIsLoading(true);
       this.locService.getLocationEntity($event).subscribe(res =>{
         let response:any=res;
         this.locationDetails.entity_id = response.location_suggestions[0].entity_id;
@@ -61,6 +66,7 @@ export class HeaderComponent implements OnInit {
           this.locState.setLocation(data1.location);
           this.restraState.setRestaurants(data1.best_rated_restaurant);
           this.router.navigateByUrl('/restaurantList');  
+          this.locService.setIsLoading(false);
         })
 
       })

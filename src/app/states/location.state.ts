@@ -9,7 +9,7 @@ export class LocationState {
   
     constructor() { }
   currentLocation: any;
-  locations = ['Bengaluru', 'Hyderabad','Mumbai', 'Delhi'];
+  locations = ['Select Manually','Bengaluru', 'Hyderabad','Mumbai', 'Delhi'];
   
   setLocation(loc){
     this.currentLocation = loc;

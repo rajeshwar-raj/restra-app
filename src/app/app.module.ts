@@ -13,6 +13,7 @@ import { FilterPipe } from './custom-filter/filter.pipe';
 import {FormsModule} from "@angular/forms";
 import { RestraState } from './states/restra.state';
 import { LocationState } from './states/location.state';
+import { UserReviewComponent } from './components/user-review/user-review.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { LocationState } from './states/location.state';
     RestaurantListComponent,
     RestaurantDetailsComponent,
     RestaurantCardComponent,
-    FilterPipe
+    FilterPipe,
+    UserReviewComponent
   ],
   imports: [
     BrowserModule,
