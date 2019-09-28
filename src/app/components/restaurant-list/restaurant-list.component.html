@@ -1,13 +1,20 @@
-<div class="restList">
-<div  *ngFor="let rest of restaurantList">
-    
-    <div class="restCard" (click)="getRestaurant(rest.restaurant.R.res_id)">
-            <img class="restThumb" src={{rest.restaurant.thumb}} alt={{rest.restaurant.name}} >
-            <div style="display: grid;">
-                <span class="restName">{{rest.restaurant.name}}</span>
-                <span class="restDetails">Locality:{{rest.restaurant.location.locality}}</span>
-                <span class="restDetails">Average Cost : {{rest.restaurant.average_cost_for_two}} for 2 people</span>
+<div class="listMain">
+    <div>
+        <input  class="searchBox" type="text" [(ngModel)]="searchText" placeholder="Enter Restaurant name to search">
+    </div>
+    <div class="restList">
+        <div *ngFor="let rest of restaurantList | filter : searchText">
+            <div class="restCard" (click)="getRestaurant(rest.restaurant.R.res_id)">
+                <img class="restThumb" src={{rest.restaurant.thumb}} alt={{rest.restaurant.name}}>
+                <div style="display: grid;">
+                    <span class="restName">{{rest.restaurant.name}}</span>
+
+                    <div><span class="restDetails">Locality: {{rest.restaurant.location.locality}}</span>
+                        <br>
+                    <span class="restDetails">Average Cost : {{rest.restaurant.average_cost_for_two}} for 2
+                        people</span></div>
+                </div>
             </div>
-</div>
-</div>
+        </div>
+    </div>
 </div>

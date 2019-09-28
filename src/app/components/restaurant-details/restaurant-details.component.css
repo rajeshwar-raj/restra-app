@@ -1,9 +1,12 @@
 .flex-container{
     display: flex;
+    
 }
 .featuredImage{
     height: 10em;
-    widows: 15em;
+    width: 15em;
+    border-radius: 5%;
+    margin: 1%;
 }
 .userImg{
     border-radius: 80px;
@@ -42,4 +45,32 @@
     border-radius: 3px;
     margin: 2%;
     background-color: #eef4f7;
+}
+.restDetails{
+    margin: 2%;
+    padding: 1%;
+    background-color: #fbf9d5;
+    border: 1px solid #97979c;
+    
+}
+.resImages{
+    height: 10em;
+    width: 15em;
+    padding: 1%;
+    border-radius: 5%;
+
+}
+.headerText{
+    margin: 2%;
+    font-size: larger;
+    font-weight: bold;
+    color: #474848;
+    text-align: center;
+}
+.imageBox{
+    margin: 2%;
+    padding: 1%;
+    background-color: #eef4f7;
+    border: 1px solid #97979c;
+    overflow-x: scroll;
 }

@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class RestaurantListComponent implements OnInit {
 
   restaurantList;
+  searchText: string = '';
   constructor(private locSer:LocationService, private router:Router) { }
 
   ngOnInit() {
@@ -24,4 +25,5 @@ export class RestaurantListComponent implements OnInit {
       this.router.navigateByUrl('/restaurant-details');
     })
   }
+  
 }

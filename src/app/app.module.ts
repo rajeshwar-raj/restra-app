@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { RestaurantListComponent } from './components/restaurant-list/restaurant-list.component';
 import { RestaurantDetailsComponent } from './components/restaurant-details/restaurant-details.component';
 import { RestaurantCardComponent } from './components/restaurant-card/restaurant-card.component'; 
+import { FilterPipe } from './custom-filter/filter.pipe';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -16,12 +18,14 @@ import { RestaurantCardComponent } from './components/restaurant-card/restaurant
     HeaderComponent,
     RestaurantListComponent,
     RestaurantDetailsComponent,
-    RestaurantCardComponent
+    RestaurantCardComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     LocationService
