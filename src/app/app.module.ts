@@ -11,6 +11,8 @@ import { RestaurantDetailsComponent } from './components/restaurant-details/rest
 import { RestaurantCardComponent } from './components/restaurant-card/restaurant-card.component'; 
 import { FilterPipe } from './custom-filter/filter.pipe';
 import {FormsModule} from "@angular/forms";
+import { RestraState } from './states/restra.state';
+import { LocationState } from './states/location.state';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import {FormsModule} from "@angular/forms";
     FormsModule
   ],
   providers: [
-    LocationService
+    LocationService,
+    RestraState,
+    LocationState
   ],
   bootstrap: [AppComponent]
 })
