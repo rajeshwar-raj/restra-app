@@ -16,10 +16,13 @@
     <div class="headerText">User Photos</div>
     <div class="flex-container imageBox">
 
-        <span *ngFor="let img of rd.photos">
-            <img class="resImages" src={{img.photo.url}}>
+        <span *ngFor="let img of rd.photos, index as i">
+            <img class="resImages" src={{img.photo.url}} (click)=openCarousel(i)>
         </span>
 
+    </div>
+    <div *ngIf="showImgCarouselFn()">
+        <app-carousel></app-carousel>
     </div>
     <div class="headerText">User Reviews</div>
     <div>
@@ -29,18 +32,5 @@
 
             </app-user-review>
         </div>
-        <!-- <div class="revSection" *ngFor="let review of rd.all_reviews.reviews">
-            <div class="flex-container ">
-                <div>
-                    <img class="userImg" src={{review.review.user.profile_image}} alt="{{review.review.user.name}}">
-                </div>
-                <div class="revDetails">
-                    <span class="userName">{{review.review.user.name}}</span> rates it as <span
-                        class="usrRatingText">{{review.review.rating_text}}</span>
-                    <p class="userReviewText">{{review.review.review_text}}</p>
-                </div>
-            </div>
-
-        </div> -->
     </div>
 </div>

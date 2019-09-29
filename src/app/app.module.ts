@@ -14,6 +14,8 @@ import {FormsModule} from "@angular/forms";
 import { RestraState } from './states/restra.state';
 import { LocationState } from './states/location.state';
 import { UserReviewComponent } from './components/user-review/user-review.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { UserImageService } from './services/user-image-service';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { UserReviewComponent } from './components/user-review/user-review.compon
     RestaurantDetailsComponent,
     RestaurantCardComponent,
     FilterPipe,
-    UserReviewComponent
+    UserReviewComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +37,8 @@ import { UserReviewComponent } from './components/user-review/user-review.compon
   providers: [
     LocationService,
     RestraState,
-    LocationState
+    LocationState,
+    UserImageService
   ],
   bootstrap: [AppComponent]
 })
